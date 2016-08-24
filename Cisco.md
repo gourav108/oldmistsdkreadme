@@ -184,7 +184,10 @@ MSTPoint *snapPoint = [[MSTPoint alloc] initWithCGPoint:stpPoint];
  [[MistManager sharedInstance] addEvent:@"didReceivedVirtualBeacons" forTarget:self];
  
  -(void)mistManager:(MSTCentralManager *)manager didReceivedVirtualBeacons:(NSDictionary *)virtualBeacons{
-   
+   for (NSDictionary *vbeacon in virtualBeacons) {
+            NSLog(@"%@",[vbeacon objectForKey:@"name"]); 
+
+        }
 }
  
  ```
