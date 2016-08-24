@@ -29,16 +29,15 @@ We use cocoapods to manage dependencies [https://cocoapods.org/](Cocoapods)
 
 **Connecting to Device**
 
-```objective-c
-    [[MistManager sharedInstance] addEvent:@"didConnect" forTarget:self];
+ ```objc
+     [[MistManager sharedInstance] addEvent:@"didConnect" forTarget:self];
 
 	@params  isConnected represents if user are successfully connected to device*
 	-(void)mistManager:(MSTCentralManager *)manager didConnect:(BOOL)isConnected  
-
-
+```
 **Check if you are inside tracking zone** 
 	
-    
+ ```objc
     [[MistManager sharedInstance] addEvent:@"didUpdateMap" forTarget:self];
     -(void)mistManager:(MSTCentralManager *)manager didUpdateMap:(MSTMap *)map at:(NSDate *)dateUpdated{
     [Default performBlockOnMainThread:^{
@@ -51,6 +50,7 @@ We use cocoapods to manage dependencies [https://cocoapods.org/](Cocoapods)
         [self.view makeToast:@"You are OutDoor"];
     }
     }];}
+```
 
     
 
@@ -166,7 +166,7 @@ Once you added the MSTWayfinder view in your viewcontroller you can set the bool
                             
                             
                         
-```
+
 
 
 
