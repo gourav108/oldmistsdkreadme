@@ -75,19 +75,22 @@ We use cocoapods to manage dependencies [https://cocoapods.org/](Cocoapods)
 **Get Zone and virtual beacon notification**
  
  ```objc   
- [[MistManager sharedInstance] addEvent:@"didReceiveNotificationMessage" forTarget:self];   
+[[MistManager sharedInstance] addEvent:@"didReceiveNotificationMessage" forTarget:self];   
     
     -(void)mistManager:(MSTCentralManager *)manager didReceiveNotificationMessage:(NSDictionary *)payload{
 
         NSDictionary *message = [payload objectForKey:@"message"];
         if ([[payload objectForKey:@"type"] isEqualToString:@"zones-events"]) {
-            [self handleZoneEvents:message];
+            // Show Zone Events
         }
         if ([[payload objectForKey:@"type"] isEqualToString:@"zone-event-vb"]) {
-            [self handleZoneVBEvents:message];
+
+            // Show Virtual Beacon Notification
         }
 	}
  ```
+ 
+ 
  **To show all path**
 
 MSTMap contains the Wayfinding json which contain all the  nodes with its edges and position 
@@ -164,7 +167,19 @@ Once you added the MSTWayfinder view in your viewcontroller you can set the bool
                                     }
                                 });
 ```
-                            
+ **Show Snap to path dot**
+ 
+ ```objc  
+  //Get the closest point  
+  CGPoint stpPoint = [self.indoorMapView closestPointOnAllPaths:fvPoint];
+                                    
+                                  
+MSTPoint *snapPoint = [[MSTPoint alloc] initWithCGPoint:stpPoint];
+                                    [self.indoorMapView drawSnapToPath:[snapPoint convertToCGPoint] shouldMove:[[result objectForKey:@"canMove"] boolValue] shouldShowMotion:[[result objectForKey:@"showYellow"] boolValue]];
+                                    
+ 
+ ```
+                          
                         
 
 
