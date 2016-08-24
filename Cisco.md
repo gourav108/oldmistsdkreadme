@@ -29,7 +29,7 @@ We use cocoapods to manage dependencies [https://cocoapods.org/](Cocoapods)
 
 **Connecting to Device**
 
- ```objc
+```objc
      [[MistManager sharedInstance] addEvent:@"didConnect" forTarget:self];
 
 	@params  isConnected represents if user are successfully connected to device*
@@ -50,12 +50,13 @@ We use cocoapods to manage dependencies [https://cocoapods.org/](Cocoapods)
         [self.view makeToast:@"You are OutDoor"];
     }
     }];}
-```
+ ```
 
     
 
   **Get Floors  and Bluedot**
-  
+ 
+ ```objc
     [[MistManager sharedInstance] addEvent:@"didUpdateRelativeLocation" forTarget:self];   
     
     
@@ -65,18 +66,16 @@ We use cocoapods to manage dependencies [https://cocoapods.org/](Cocoapods)
  	To draw the floorimage in a UIView initialze the MSTWayfinder and pass the Map object to  MSTWayfinder
 	For more info please see the the sample app for how to add a floor image 
 	To draw a blue dot use the below method of MSTWayfinder.
-	Check out the sample app code for details 
+	Check out the sample app code for more details 
 	drawDotViewAtCGPoint:(CGPoint)point forIndex:(NSUInteger)index shouldMove:(BOOL)shouldMove shouldShowMotion:(bool)showMotion
  	
 	}
- 	
- 	
-        
-        
-
+ ```
+ 
 **Get Zone and virtual beacon notification**
-
-    [[MistManager sharedInstance] addEvent:@"didReceiveNotificationMessage" forTarget:self];   
+ 
+ ```objc   
+ [[MistManager sharedInstance] addEvent:@"didReceiveNotificationMessage" forTarget:self];   
     
     -(void)mistManager:(MSTCentralManager *)manager didReceiveNotificationMessage:(NSDictionary *)payload{
 
@@ -88,7 +87,7 @@ We use cocoapods to manage dependencies [https://cocoapods.org/](Cocoapods)
             [self handleZoneVBEvents:message];
         }
 	}
-
+ ```
  **To show all path**
 
 MSTMap contains the Wayfinding json which contain all the  nodes with its edges and position 
@@ -112,6 +111,7 @@ Below is the sample json
 	
 Below is the sample Snippet to create the wayfinding graph from the Json
 
+```objc
         -(void)loadWayfindingData:(NSDictionary *)mapJSON{
         NSArray *nodesFromFile = [mapJSON objectForKey:@"nodes"];
 
@@ -163,7 +163,7 @@ Once you added the MSTWayfinder view in your viewcontroller you can set the bool
                                         }];
                                     }
                                 });
-                            
+```
                             
                         
 
