@@ -178,7 +178,7 @@ MSTPoint *snapPoint = [[MSTPoint alloc] initWithCGPoint:stpPoint];
 [self.indoorMapView drawSnapToPath:[snapPoint convertToCGPoint] shouldMove:[[result objectForKey:@"canMove"] boolValue] shouldShowMotion:[[result objectForKey:@"showYellow"] boolValue]];
                                     
  ```
- **Get all the virtual beacon of organization**                        
+ **Get all virtual beacon of organization**                        
  
  ```objc                       
  [[MistManager sharedInstance] addEvent:@"didReceivedVirtualBeacons" forTarget:self];
