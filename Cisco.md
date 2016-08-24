@@ -34,7 +34,7 @@ We use cocoapods to manage dependencies [https://cocoapods.org/](Cocoapods)
 
 	@params  isConnected represents if user are successfully connected to device*
 	-(void)mistManager:(MSTCentralManager *)manager didConnect:(BOOL)isConnected  
-```
+
 
 **Check if you are inside tracking zone** 
 	
@@ -55,8 +55,7 @@ We use cocoapods to manage dependencies [https://cocoapods.org/](Cocoapods)
     
 
   **Get Floors  and Bluedot**
-  	
-    ```objective-c 
+  
     [[MistManager sharedInstance] addEvent:@"didUpdateRelativeLocation" forTarget:self];   
     
     
@@ -70,7 +69,7 @@ We use cocoapods to manage dependencies [https://cocoapods.org/](Cocoapods)
 	drawDotViewAtCGPoint:(CGPoint)point forIndex:(NSUInteger)index shouldMove:(BOOL)shouldMove shouldShowMotion:(bool)showMotion
  	
 	}
- 	```
+ 	
  	
         
         
@@ -167,7 +166,7 @@ Once you added the MSTWayfinder view in your viewcontroller you can set the bool
                             
                             
                         
-
+```
 
 
 
