@@ -18,7 +18,7 @@ We use cocoapods to manage dependencies [https://cocoapods.org/](Cocoapods)
 
 - Download the framework from [link]() and 	drag and drop .framework  file to demo project.
 	
-	<!--![image](http://gdurl.com/cwMA)-->
+	![image](http://gdurl.com/cwMA)
 	     
 - Add Organization through Qrcode  located under Mobile - [xy61il.cmxcis.co](https://xy61il.cmxcis.co)
 
