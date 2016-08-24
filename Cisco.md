@@ -30,6 +30,7 @@ We use cocoapods to manage dependencies [https://cocoapods.org/](Cocoapods)
 **Connecting to Device**
 
 ```objc
+// add addEvent function in viewWillAppear
      [[MistManager sharedInstance] addEvent:@"didConnect" forTarget:self];
 
 	@params  isConnected represents if user are successfully connected to device*
@@ -171,17 +172,22 @@ Once you added the MSTWayfinder view in your viewcontroller you can set the bool
  
  ```objc  
   //Get the closest point  
-  CGPoint stpPoint = [self.indoorMapView closestPointOnAllPaths:fvPoint];
+CGPoint stpPoint = [self.indoorMapView closestPointOnAllPaths:fvPoint];
                                     
-                                  
 MSTPoint *snapPoint = [[MSTPoint alloc] initWithCGPoint:stpPoint];
-                                    [self.indoorMapView drawSnapToPath:[snapPoint convertToCGPoint] shouldMove:[[result objectForKey:@"canMove"] boolValue] shouldShowMotion:[[result objectForKey:@"showYellow"] boolValue]];
+[self.indoorMapView drawSnapToPath:[snapPoint convertToCGPoint] shouldMove:[[result objectForKey:@"canMove"] boolValue] shouldShowMotion:[[result objectForKey:@"showYellow"] boolValue]];
                                     
+ ```
+ **Get all the virtual beacon of organization**                        
+ 
+ ```objc                       
+ [[MistManager sharedInstance] addEvent:@"didReceivedVirtualBeacons" forTarget:self];
+ 
+ -(void)mistManager:(MSTCentralManager *)manager didReceivedVirtualBeacons:(NSDictionary *)virtualBeacons{
+   
+}
  
  ```
-                          
-                        
-
 
 
 
