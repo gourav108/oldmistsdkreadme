@@ -37,7 +37,8 @@ We use cocoapods to manage dependencies [https://cocoapods.org/](Cocoapods)
 ```
 
 **Check if you are inside tracking zone** 
-
+	
+    
     [[MistManager sharedInstance] addEvent:@"didUpdateMap" forTarget:self];
     -(void)mistManager:(MSTCentralManager *)manager didUpdateMap:(MSTMap *)map at:(NSDate *)dateUpdated{
     [Default performBlockOnMainThread:^{
@@ -54,23 +55,22 @@ We use cocoapods to manage dependencies [https://cocoapods.org/](Cocoapods)
     
 
   **Get Floors  and Bluedot**
-  
+  	
+    ```objective-c 
     [[MistManager sharedInstance] addEvent:@"didUpdateRelativeLocation" forTarget:self];   
     
     
- This function is called when we have both relative location and the actual map details for rendering.
-  Called when Framework receives a location update  and has map information.
+	 This function is called when we have both relative location and the actual map details for rendering.Called when Framework receives a location update  and has map information.
  
-
- 	
  	-(void)mistManager: (MSTCentralManager *) manager didUpdateRelativeLocation: (MSTPoint *) relativeLocation inMaps: (NSArray *) maps at: (NSDate *) dateUpdated{
  	To draw the floorimage in a UIView initialze the MSTWayfinder and pass the Map object to  MSTWayfinder
 	For more info please see the the sample app for how to add a floor image 
 	To draw a blue dot use the below method of MSTWayfinder.
 	Check out the sample app code for details 
 	drawDotViewAtCGPoint:(CGPoint)point forIndex:(NSUInteger)index shouldMove:(BOOL)shouldMove shouldShowMotion:(bool)showMotion
- 	}
  	
+	}
+ 	```
  	
         
         
